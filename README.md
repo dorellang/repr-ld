@@ -31,7 +31,14 @@ Entonces podemos definir el siguiente representer
 reprLd = require('repr-ld');
 personFactory = require('./person').factory;
 
+// this creates the representer factory for your app
+// though not shown here you may pass arguments to it
+// in order to to customize the default behavior for your
+// representers defined with it.
 myReprLd = reprLd();
+
+// this is the actual representer
+// it has a lot of fun options to try :)
 personRepresenter = myReprLd.define({
   name: 'person',
   factory: personFactory,
@@ -50,8 +57,8 @@ y luego podemos serializar/deserializar
 ```
 // Serialization. Btw, model is a model instance.
 // It returns a javascript object representing a JSON-LD
-// document which can be trivially turned into a String using
-// the JSON.stringify function.
+// document which then can be trivially turned into a String
+// using the JSON.stringify function.
 personRepresenter.serialize(model)
 
 // Deserialization. Btw, obj must be a javascript object
@@ -63,3 +70,4 @@ personRepresenter.deserialize(obj)
 Pretty cool, huh?
 
 But... what if you wanted to have a different ``id`` property, or maybe to have some read-only property, or, better yet, to have a property that be readable only when a certain condition happens (like being admin or something like that)? Don't worry, Repr-ld is flexible enough to deal with all those use cases and many more.
+
