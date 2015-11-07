@@ -62,4 +62,4 @@ personRepresenter.deserialize(obj)
 
 Pretty cool, huh?
 
-But... what if you wanted to have a different ``id`` property, or maybe to have some read-only property, or, better yet, to have a property that be readable only when certain condition happens (like being admin or something like that)? Don't worry, Repr-ld is flexible enough to deal with all those use cases and many more.
+But... what if you wanted to have a different ``id`` property, or maybe to have some read-only property, or, better yet, to have a property that be readable only when a certain condition happens (like being admin or something like that)? Don't worry, Repr-ld is flexible enough to deal with all those use cases and many more.
